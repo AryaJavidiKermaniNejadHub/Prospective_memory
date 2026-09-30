@@ -1,0 +1,25 @@
+# Render Blueprint (optional). Dashboard > New > Blueprint, then fill in the prompted secrets.
+databases:
+  - name: pm-experiment-db
+    plan: basic-256mb        # check current Render plans/pricing; free-tier databases are time-limited
+services:
+  - type: web
+    name: pm-experiment
+    runtime: python
+    plan: starter            # free web services sleep when idle; use a paid plan for scheduled sessions
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --workers 2 --threads 4 --bind 0.0.0.0:$PORT --timeout 60
+    healthCheckPath: /healthz
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: DATABASE_URL
+        fromDatabase: {name: pm-experiment-db, property: connectionString}
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ADMIN_USERNAME
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: BREAK_SECONDS
+        value: "600"

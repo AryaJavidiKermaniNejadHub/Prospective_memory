@@ -1,0 +1,5 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Researcher login</title><style>body{font-family:system-ui,Segoe UI,Arial;margin:24px;background:#f6f7f9;color:#222}table{border-collapse:collapse;background:#fff;font-size:14px}th,td{border:1px solid #ddd;padding:5px 9px;text-align:left}th{background:#eee}.warn{background:#fff3cd;border:1px solid #e0c060;padding:10px;margin:10px 0}.btn{padding:6px 12px;margin:2px}a{color:#1a56c4}.small{font-size:12px;color:#666}</style></head><body>
+<h2>Researcher login</h2>{% if error %}<p style="color:#b00">{{ error }}</p>{% endif %}
+<form method="post"><p><input name="username" placeholder="Username" autocomplete="username" required></p>
+<p><input name="password" type="password" placeholder="Password" autocomplete="current-password" required></p>
+<button class="btn">Log in</button></form></body></html>

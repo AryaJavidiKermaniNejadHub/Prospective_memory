@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Study</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head><body>
+<div id="screen"></div>
+<div id="stage">
+  <div id="square"></div><div id="probe"></div><div id="feedback"></div>
+  <div id="response-buttons" aria-label="Response buttons">
+    <button class="resp-btn yn-btn" id="btn-y" type="button" aria-label="Yes">Y</button>
+    <button class="resp-btn yn-btn" id="btn-n" type="button" aria-label="No">N</button>
+    <button class="resp-btn pm-btn" id="btn-z" type="button" aria-label="Prospective memory target">Z</button>
+  </div>
+</div>
+<script>window.TOKEN = {{ token|tojson }};</script>
+<script src="{{ url_for('static', filename='js/instructions.js') }}"></script>
+<script src="{{ url_for('static', filename='js/experiment.js') }}"></script>
+</body></html>

@@ -1,0 +1,23 @@
+{
+  "stimulus_set_name": "PLACEHOLDER-v1 (NOT the Smith & Bayen 2006 lists)",
+  "is_placeholder": true,
+  "note": "Replace with your validated lists. Each list needs 6 categories; each category has ONE target and its fillers. Per list: exactly 6 targets and at least 56 fillers in total. Words must not be colour names.",
+  "lists": {
+    "A": {
+      "fruit":     {"target": "cherry",  "fillers": ["apple","banana","grape","lemon","melon","peach","plum","pear","apricot","fig"]},
+      "bird":      {"target": "eagle",   "fillers": ["robin","sparrow","crow","owl","swan","duck","parrot","pigeon","falcon"]},
+      "vehicle":   {"target": "truck",   "fillers": ["bus","train","taxi","boat","plane","bicycle","tractor","tram","ferry"]},
+      "furniture": {"target": "sofa",    "fillers": ["table","chair","desk","bed","shelf","cabinet","bench","stool","dresser"]},
+      "clothing":  {"target": "jacket",  "fillers": ["shirt","socks","scarf","gloves","dress","sweater","hat","belt","skirt"]},
+      "tool":      {"target": "hammer",  "fillers": ["saw","drill","wrench","pliers","chisel","shovel","axe","level","screwdriver","hoe"]}
+    },
+    "B": {
+      "vegetable":   {"target": "carrot",  "fillers": ["potato","onion","spinach","cabbage","celery","garlic","lettuce","cucumber","radish","turnip"]},
+      "insect":      {"target": "beetle",  "fillers": ["ant","bee","fly","wasp","moth","cricket","mosquito","ladybug","grasshopper"]},
+      "profession":  {"target": "doctor",  "fillers": ["teacher","lawyer","nurse","pilot","farmer","plumber","baker","judge","tailor"]},
+      "sport":       {"target": "soccer",  "fillers": ["tennis","hockey","golf","rugby","boxing","cycling","swimming","baseball","skiing"]},
+      "instrument":  {"target": "violin",  "fillers": ["piano","guitar","flute","drum","trumpet","harp","cello","clarinet","saxophone"]},
+      "kitchenware": {"target": "spoon",   "fillers": ["fork","knife","plate","bowl","kettle","pan","whisk","ladle","colander","teapot"]}
+    }
+  }
+}

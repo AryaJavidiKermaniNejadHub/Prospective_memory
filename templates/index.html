@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Color Matching &amp; Memory Study</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head><body>
+<div id="screen"><div class="card">
+<h1>Color Matching &amp; Memory Study</h1>
+<!-- ============ REPLACE THIS BLOCK WITH YOUR IRB/ETHICS-APPROVED INFORMATION & CONSENT TEXT ============ -->
+<p><strong>You are invited to participate in a study on memory and attention based on research by Rebekah E. Smith and Ute J. Bayen.</p>
+<p>Researcher and developer: Arya Javidi Kermani Nejad</strong></p>
+<p>This study takes about 25–40 minutes. You can complete it on a computer or phone. Please complete it in one sitting in a quiet place.</p>
+<!-- ================================================================================================== -->
+<label>Participant ID:<br><input id="pid" type="text" value="{{ pid }}" autocomplete="off" {% if require_id %}required{% endif %}></label>
+<p><label><input id="consent" type="checkbox"> I have read the information above and agree to take part.</label></p>
+<button id="go" class="btn">Start</button> <p id="msg" class="err"></p>
+</div></div>
+<script>
+document.getElementById('go')?.addEventListener('click', async () => {
+  const msg = document.getElementById('msg'); msg.textContent = '';
+  const r = await fetch('/api/start', {method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({participant_id: document.getElementById('pid').value, consent: document.getElementById('consent').checked,
+                          group: {{ group|tojson }} })});
+  const j = await r.json(); if (r.ok) location.href = j.url; else msg.textContent = j.error || 'Error';
+});
+</script></body></html>

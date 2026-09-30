@@ -1,0 +1,35 @@
+:root { --c-blue:#2f5bff; --c-green:#00b83c; --c-red:#e60000; --c-yellow:#ffe600; --c-white:#ffffff; }
+* { box-sizing: border-box; }
+html, body { margin:0; height:100%; background:#000; color:#ddd; font-family: system-ui, Segoe UI, Arial, sans-serif; }
+body { overflow:hidden; }
+#screen { position:absolute; inset:0; overflow:auto; display:flex; align-items:center; justify-content:center; padding:24px; }
+.card { max-width:760px; width:100%; line-height:1.55; font-size:19px; }
+.card h1, .card h2 { color:#fff; margin-top:0; }
+.btn { background:#2a6df4; color:#fff; border:0; padding:12px 26px; font-size:18px; border-radius:6px; cursor:pointer; margin-top:18px; }
+.btn:disabled { background:#444; color:#999; cursor:not-allowed; }
+.kbd { display:inline-block; border:1px solid #888; border-radius:4px; padding:0 8px; background:#222; color:#fff; font-weight:600; }
+.swatch { display:inline-block; width:38px; height:38px; margin:0 4px; vertical-align:middle; }
+.c-blue{background:var(--c-blue)} .c-green{background:var(--c-green)} .c-red{background:var(--c-red)}
+.c-yellow{background:var(--c-yellow)} .c-white{background:var(--c-white)}
+.demo { text-align:center; margin:14px 0; }
+.demo .word { font-size:34px; font-weight:700; letter-spacing:2px; margin-left:18px; vertical-align:middle; }
+#stage { position:absolute; inset:0; background:#000; cursor:none; display:none; }
+#square { position:absolute; left:50%; top:50%; width:30vh; height:30vh; transform:translate(-50%,-50%); display:none; }
+#probe { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); font-size:max(3vh,28px); font-weight:700; letter-spacing:.08em; display:none; }
+#feedback { position:absolute; left:50%; top:62%; transform:translateX(-50%); font-size:26px; color:#ddd; display:none; }
+input[type=text] { font-size:20px; padding:8px 10px; width:100%; margin:6px 0; background:#111; color:#fff; border:1px solid #666; border-radius:4px; }
+.words { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; text-align:center; font-size:30px; font-weight:700; color:#fff; margin:20px 0; }
+.err { color:#ff8a80; }
+.light { background:#f6f7f9; color:#222; } .light body { overflow:auto; }
+
+/* Touch-friendly response controls. They supplement the keyboard; scoring uses the same Y/N/Z events. */
+#response-buttons { position:absolute; left:0; right:0; bottom:max(18px, env(safe-area-inset-bottom)); display:none; justify-content:center; gap:12px; padding:0 14px; z-index:20; }
+.resp-btn { min-width:84px; min-height:64px; padding:12px 22px; border:2px solid #777; border-radius:12px; background:#171717; color:#fff; font-size:26px; font-weight:700; touch-action:manipulation; -webkit-tap-highlight-color:transparent; user-select:none; }
+.resp-btn:active { transform:scale(.97); background:#303030; }
+#probe.probe-fade { opacity:0; transition:opacity 100ms linear; }
+@media (max-width:520px) {
+  #square { width:28vw; height:28vw; }
+  #probe { font-size:30px; }
+  #response-buttons { gap:8px; }
+  .resp-btn { flex:1 1 0; min-width:0; min-height:62px; font-size:24px; }
+}
